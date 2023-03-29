@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return 'OK';
+    return 'Welcome to Nago!';
 });
 
 Route::get('/health-check', function () {

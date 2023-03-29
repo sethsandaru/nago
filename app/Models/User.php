@@ -37,6 +37,11 @@ class User extends Authenticatable
         return ['uuid'];
     }
 
+    public function getRouteKeyName(): string
+    {
+        return 'uuid';
+    }
+
     public function userFollowers(): HasMany
     {
         return $this->hasMany(UserFollower::class, 'user_id');
@@ -50,5 +55,12 @@ class User extends Authenticatable
     public static function findByUuid(string $uuid): ?User
     {
         return self::where('uuid', $uuid)->first();
+    }
+
+    public function isAlreadyFollowed(User $userToFollow): bool
+    {
+        return $this->userFollowers()
+            ->where('following_user_id', $userToFollow->id)
+            ->exists();
     }
 }

@@ -28,4 +28,14 @@ class UsersIndexRequest extends FormRequest
     {
         return $this->integer('limit') ?: 20;
     }
+
+    public function getSortByColumn(): string
+    {
+        return $this->validated('sort_by') ?: 'created_at';
+    }
+
+    public function getSortDirection(): string
+    {
+        return $this->validated('sort_direction') ?: 'ASC';
+    }
 }

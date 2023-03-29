@@ -16,7 +16,7 @@ class UsersController extends Controller
     public function index(UsersIndexRequest $request): JsonResponse
     {
         $users = User::query()
-            ->orderBy($request->validated('sort_by'), $request->validated('sort_direction'))
+            ->orderBy($request->getSortByColumn(), $request->getSortDirection())
             ->when(
                 $request->filled('search'),
                 fn ($query) => $query->where('name', 'LIKE', "%{$request->input('search')}%")
