@@ -1,5 +1,8 @@
 # Nago
 
+[![Build and Test (With Coverage)](https://github.com/sethsandaru/nago/actions/workflows/build-and-test.yaml/badge.svg)](https://github.com/sethsandaru/nago/actions/workflows/build-and-test.yaml)
+
+
 Nago is an API Application which provides:
 
 - Authentication
