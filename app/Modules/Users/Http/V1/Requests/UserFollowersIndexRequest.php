@@ -31,6 +31,10 @@ class UserFollowersIndexRequest extends FormRequest
 
     public function getSortByColumn(): string
     {
+        if ($this->validated('sort_by') === 'followed_at') {
+            return 'created_at';
+        }
+
         return $this->validated('sort_by') ?: 'created_at';
     }
 
