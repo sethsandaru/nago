@@ -55,6 +55,10 @@ composer test # without coverage
 composer test-coverage # with coverage
 ```
 
+- Test Structure:
+  - Unit Tests: test methods of classes (small unit).
+  - Feature Tests: test a whole endpoint (big one).
+
 ### Project Structure
 
 - app: Core & Shared stuff
