@@ -74,24 +74,6 @@ Nago uses PHP-CS-FIXER to apply awesome coding standards 😉
 
 ## Endpoints
 
-Note: you need to log in before requesting to other endpoints.
-
-Remember to provide the `AUTHORIZATION: Bearer {token}` header.
-
-### [POST] v1/auth
-
-To login into the system.
-
-Payload: 
-
-- email: string
-- password: string
-
-Response:
-
-- OK: `{"access_token": "xxxx"}`
-- Error: `{"error": "The email field is required"}`
-
 ### [GET] v1/users
 
 To get a list of users. By default, the list will be paginated (per 20 records).
@@ -213,6 +195,10 @@ To unfollow a specific user (the authenticated user will unfollow the particular
     "success": true
 }
 ```
+
+## Follow Up
+
+- Should implement a proper Authentication
 
 ## Final Words
 
