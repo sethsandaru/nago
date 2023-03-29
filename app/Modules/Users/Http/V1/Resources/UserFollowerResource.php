@@ -14,7 +14,7 @@ class UserFollowerResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'name' => $this->followingUser->name,
+            'name' => $this->user->name,
             'followed_at' => $this->created_at?->toDateTimeString(),
         ];
     }
