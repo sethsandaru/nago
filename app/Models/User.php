@@ -42,12 +42,12 @@ class User extends Authenticatable
         return 'uuid';
     }
 
-    public function userFollowers(): HasMany
+    public function followingUsers(): HasMany
     {
         return $this->hasMany(UserFollower::class, 'user_id');
     }
 
-    public function followingUsers(): HasMany
+    public function userFollowers(): HasMany
     {
         return $this->hasMany(UserFollower::class, 'following_user_id');
     }

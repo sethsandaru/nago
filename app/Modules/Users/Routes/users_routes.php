@@ -16,5 +16,6 @@ Route::prefix('v1')
         Route::post('users/{user}/follow', [UsersController::class, 'follow']);
         Route::post('users/{user}/unfollow', [UsersController::class, 'unfollow']);
 
-        Route::get('users/{user}/followers', [UserFollowersController::class, 'index']);
+        Route::get('users/{user}/following', [UserFollowersController::class, 'listFollowingUsers']);
+        Route::get('users/{user}/followers', [UserFollowersController::class, 'listUserFollowers']);
     });

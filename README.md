@@ -96,6 +96,14 @@ Response:
 
 To get a list of users. By default, the list will be paginated (per 20 records).
 
+Payload:
+
+- sort_by: created_at|name|email
+- sort_direction: asc|desc
+- search: nullable (will search on the email & name columns)
+- limit: default 20, max 100
+- page: default 1
+
 Response:
 
 ```json
@@ -128,16 +136,59 @@ To get the info of a single user, even yourself.
 
 To get a list followers of the given user. By default, the list will be paginated (per 20 records).
 
+Payload:
+
+- sort_by: followed_at|name
+- sort_direction: asc|desc
+- search: nullable (will search on the name column)
+- limit: default 20, max 100
+- page: default 1
+
+An example for user Seth Phat, there are 2 followers:
+
 ```json
 {
     "data": [
         {
-            "uuid": "...",
-            "name": "Jarek Tkaczyk"
+            "name": "Jarek Tkaczyk",
+            "followed_at": "2023-03-03 10:15:20"
         },
         {
-            "uuid": "...",
-            "name": "Taylor Otwell"
+            "name": "Taylor Otwell",
+            "followed_at": "2023-03-03 10:20:25"
+        }
+    ]
+}
+```
+
+### [GET] v1/users/:userUuid/following
+
+To get a list following users of the given user. By default, the list will be paginated (per 20 records).
+
+Payload:
+
+- sort_by: followed_at|name
+- sort_direction: asc|desc
+- search: nullable (will search on the name column)
+- limit: default 20, max 100
+- page: default 1
+
+An example for user Seth Phat, Seth Phat is following 3 users
+
+```json
+{
+    "data": [
+        {
+            "name": "Jarek Tkaczyk",
+            "followed_at": "2023-03-03 10:15:20"
+        },
+        {
+            "name": "Taylor Otwell",
+            "followed_at": "2023-03-03 10:20:25"
+        },
+        {
+            "name": "Yone",
+            "followed_at": "2023-03-04 10:25:25"
         }
     ]
 }

@@ -3,6 +3,8 @@
 namespace App\Modules\Users\Models;
 
 use App\Models\User;
+use Database\Factories\UserFollowerFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
@@ -18,6 +20,8 @@ use Illuminate\Support\Carbon;
  */
 class UserFollower extends Model
 {
+    use HasFactory;
+
     protected $table = 'user_followers';
 
     protected $casts = [
@@ -33,5 +37,10 @@ class UserFollower extends Model
     public function followingUser(): BelongsTo
     {
         return $this->belongsTo(User::class, 'following_user_id');
+    }
+
+    protected static function newFactory(): UserFollowerFactory
+    {
+        return new UserFollowerFactory();
     }
 }
