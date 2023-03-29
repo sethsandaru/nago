@@ -59,7 +59,7 @@ class User extends Authenticatable
 
     public function isAlreadyFollowed(User $userToFollow): bool
     {
-        return $this->userFollowers()
+        return $this->followingUsers()
             ->where('following_user_id', $userToFollow->id)
             ->exists();
     }

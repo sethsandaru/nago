@@ -24,6 +24,11 @@ class UserFollower extends Model
 
     protected $table = 'user_followers';
 
+    protected $fillable = [
+        'user_id',
+        'following_user_id',
+    ];
+
     protected $casts = [
         'user_id' => 'int',
         'following_user_id' => 'int',
