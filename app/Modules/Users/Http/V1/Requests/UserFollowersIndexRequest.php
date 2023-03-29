@@ -14,7 +14,7 @@ class UserFollowersIndexRequest extends FormRequest
             'page' => 'nullable|min:1',
             'sort_by' => [
                 'nullable',
-                Rule::in(['created_at', 'name']),
+                Rule::in(['followed_at', 'name']),
             ],
             'sort_direction' => [
                 'nullable',

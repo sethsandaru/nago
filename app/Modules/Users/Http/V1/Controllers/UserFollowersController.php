@@ -18,7 +18,9 @@ class UserFollowersController
             ->orderBy($request->getSortByColumn(), $request->getSortDirection())
             ->when(
                 $request->filled('search'),
-                fn ($query) => $query->where('name', 'LIKE', "%{$request->input('search')}%")
+                fn ($query) => $query->whereHas('followingUser', function ($query) use ($request) {
+                    $query->where('name', 'LIKE', "%{$request->input('search')}%");
+                })
             )
             ->with('followingUser')
             ->paginate($request->getPagingLimit());
@@ -35,7 +37,9 @@ class UserFollowersController
             ->orderBy($request->getSortByColumn(), $request->getSortDirection())
             ->when(
                 $request->filled('search'),
-                fn ($query) => $query->where('name', 'LIKE', "%{$request->input('search')}%")
+                fn ($query) => $query->whereHas('user', function ($query) use ($request) {
+                    $query->where('name', 'LIKE', "%{$request->input('search')}%");
+                })
             )
             ->with('user')
             ->paginate($request->getPagingLimit());
