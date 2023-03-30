@@ -1,6 +1,8 @@
 # Nago
 
 [![Build and Test (With Coverage)](https://github.com/sethsandaru/nago/actions/workflows/build-and-test.yaml/badge.svg)](https://github.com/sethsandaru/nago/actions/workflows/build-and-test.yaml)
+[![codecov](https://codecov.io/gh/sethsandaru/nago/branch/main/graph/badge.svg?token=DA8TO7XCOK)](https://codecov.io/gh/sethsandaru/nago)
+
 
 Nago is an API Application which provides:
 
