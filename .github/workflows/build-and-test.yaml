@@ -31,6 +31,7 @@ jobs:
           sudo service mysql start
           php -v
           cp .env.testing.example .env.testing
+          cp .env.testing.example .env
           mysql -uroot -proot -e "CREATE DATABASE nago_test;"
           composer install --no-interaction
           php artisan --env=testing key:generate

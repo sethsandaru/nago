@@ -18,6 +18,7 @@ class UserTest extends TestCase
             ]);
 
         $this->assertSame(3, $user->userFollowers()->count());
+        $this->assertSame(3, $user->userFollowersUsers()->count());
     }
 
     public function testUserHasManyFollowingUsers()
@@ -30,6 +31,7 @@ class UserTest extends TestCase
             ]);
 
         $this->assertSame(5, $user->followingUsers()->count());
+        $this->assertSame(5, $user->followingUsersUsers()->count());
     }
 
     public function testUserIsAlreadyFollowedToAnotherUserReturnsTrue()

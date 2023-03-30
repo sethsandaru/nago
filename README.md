@@ -2,24 +2,24 @@
 
 [![Build and Test (With Coverage)](https://github.com/sethsandaru/nago/actions/workflows/build-and-test.yaml/badge.svg)](https://github.com/sethsandaru/nago/actions/workflows/build-and-test.yaml)
 
-
 Nago is an API Application which provides:
 
-- Authentication
 - Get users list
 - Get user info
 - Follow a user
 - Unfollow a user
+- Get followers of user
+- Get following users of user
 
 Nago uses the latest Laravel version 😆
 
-FYA if you curious why I named this Nago, Nago is [Kamen Rider Nago](https://kamenrider.fandom.com/wiki/Neon_Kurama) and I love her 
+FYA if you curious why I named this Nago, Nago is [Kamen Rider Nago](https://kamenrider.fandom.com/wiki/Neon_Kurama) and I love her 🫣
 
 ## Requirements
 - PHP 8.1+
 - MySQL 8
 - Composer (PHP package management)
-🫣
+
 ## Development
 
 ### Setup
