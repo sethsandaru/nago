@@ -214,6 +214,10 @@ To unfollow a specific user (the authenticated user will unfollow the particular
 - CD (yeah it's simple to add one hehe)
 - Move the test cases to `app/Modules`
 
+## PROD - Deployed version
+
+Visit: [https://nago.sethphat.dev](https://nago.sethphat.dev)
+
 ## Final Words
 
 Looking forward to becoming your new colleague soon 😉
