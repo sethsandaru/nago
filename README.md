@@ -53,6 +53,7 @@ php artisan serve
 ### Testing
 
 ```bash
+cp .env.testing.example .env.testing # first time only, remember to set the vars
 composer test # without coverage
 composer test-coverage # with coverage
 ```
@@ -208,6 +209,10 @@ To unfollow a specific user (the authenticated user will unfollow the particular
 ## Follow Up
 
 - Should implement a proper Authentication
+  - With this, the follow & unfollow endpoint don't have to have any required payload
+    - The authenticated user would follow/unfollow to the given user
+- CD (yeah it's simple to add one hehe)
+- Move the test cases to `app/Modules`
 
 ## Final Words
 
