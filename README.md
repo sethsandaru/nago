@@ -218,6 +218,8 @@ To unfollow a specific user (the authenticated user will unfollow the particular
 
 Visit: [https://nago.sethphat.dev](https://nago.sethphat.dev)
 
+Just normal stuff: My Vultr server, Apache2.4 + PHP-FPM 8.1 & LetsEncrypt SSL, MySQL 8.
+
 ## Final Words
 
 Looking forward to becoming your new colleague soon 😉
