@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Modules\Users\Http\V1\Requests\FollowUserRequest;
 use App\Modules\Users\Http\V1\Requests\UnfollowUserRequest;
 use App\Modules\Users\Http\V1\Requests\UsersIndexRequest;
+use App\Modules\Users\Http\V1\Requests\UsersShowRequest;
 use App\Modules\Users\Services\UserService;
 use Illuminate\Http\JsonResponse;
 
@@ -27,7 +28,7 @@ class UsersController extends Controller
         return UserResource::collection($users)->response();
     }
 
-    public function show(User $user): JsonResponse
+    public function show(UsersShowRequest $request, User $user): JsonResponse
     {
         return (new UserResource($user))->response();
     }
