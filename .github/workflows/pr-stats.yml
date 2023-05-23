@@ -6,7 +6,7 @@ on:
 
 jobs:
   stats:
-    if: contains('pr-stats/', github.base_ref)
+    if: startsWith('pr-stats/', github.ref_name)
     runs-on: ubuntu-latest
     steps:
       - name: Run pull request stats
