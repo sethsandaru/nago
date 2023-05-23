@@ -1,0 +1,28 @@
+name: Weekly Review Stats
+
+on:
+  schedule:
+    - cron: '* * * * *'
+
+jobs:
+  create-pr-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: echo "trigger stats" >> README.md
+
+      - name: Get current time
+        uses: josStorer/get-current-time@v2
+        id: current-time
+        with:
+          format: YYYY-MM-DD
+          utcOffset: "+10:00"
+
+      - name: Create Stats Pull Request
+        uses: peter-evans/create-pull-request@v4.1.1
+        with:
+          title: '[Stats] Weekly Pull Request Reviews'
+          commit-message: 'Weekly pull request review statistics of Skutopia repository'
+          branch: pr-stats/${{ steps.current-time.outputs.formattedTime }}
+          add-paths: README.md
