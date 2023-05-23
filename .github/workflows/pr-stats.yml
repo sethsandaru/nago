@@ -1,12 +1,12 @@
 name: Pull Request Stats
 
 on:
-  push:
-    branches:
-      - 'pr-stats/**'
+  pull_request:
+    types: [opened]
 
 jobs:
   stats:
+    if: contains(github.base_ref, 'pr-stats/')
     runs-on: ubuntu-latest
     steps:
       - name: Run pull request stats
