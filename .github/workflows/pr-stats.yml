@@ -1,0 +1,15 @@
+name: Pull Request Stats
+
+on:
+  pull_request:
+    branches:
+      - 'pr-stats/**'
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run pull request stats
+        uses: flowwer-dev/pull-request-stats@master
+        with:
+          sort-by: 'COMMENTS'
