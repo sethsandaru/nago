@@ -6,6 +6,7 @@ on:
 
 jobs:
   create-pr-stats:
+    if: contains(github.base_ref, 'pr-stats/')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -23,6 +24,8 @@ jobs:
         uses: peter-evans/create-pull-request@v4.1.1
         with:
           title: '[Stats] Weekly Pull Request Reviews'
-          commit-message: 'Weekly pull request review statistics of Skutopia repository'
+          commit-message: 'Ignore this commit plz'
+          body: 'Weekly pull request review statistics of Skutopia repository'
           branch: pr-stats/${{ steps.current-time.outputs.formattedTime }}
           add-paths: README.md
+          delete-branch: true
